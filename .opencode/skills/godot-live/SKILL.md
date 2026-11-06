@@ -19,6 +19,9 @@ Integração ao vivo com o editor Godot. Use sempre que precisar **executar, ins
 
 O servidor MCP sobe junto com o OpenCode. O que precisa existir é o **editor aberto** com o plugin ativo, ouvindo em `ws://127.0.0.1:6550`.
 
+Se algo não bater, rode `tools/doctor.ps1` antes de qualquer tentativa e erro: ele confere Node, servidor,
+dependências, addon, plugin, config, token, porta e versão da engine, e diz o que corrigir.
+
 ## Fluxo padrão
 
 1. `godot_connection_status`
@@ -28,6 +31,14 @@ O servidor MCP sobe junto com o OpenCode. O que precisa existir é o **editor ab
 5. `godot_editor_get_scene_tree` para ver o estado real da cena aberta.
 
 ## Recuperação (editor fechado / ponte caída)
+
+Primeiro tente o diagnóstico do kit — ele responde o que está faltando sem tentativa e erro:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/doctor.ps1
+```
+
+Se o problema for o editor fechado:
 
 ```powershell
 # 1. Verificar se a porta esta ouvindo
