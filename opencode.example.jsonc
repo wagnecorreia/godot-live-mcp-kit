@@ -1,0 +1,16 @@
+// Copie para opencode.json na raiz do seu projeto Godot e ajuste o caminho.
+// Formato OpenCode V2: servidores ficam em mcp.servers (nao em mcp.<nome>).
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "godot": {
+        "type": "local",
+        "command": ["node", "C:/Users/SEU_USUARIO/Tools/godot-mcp/dist/index.js"],
+        // cwd "." resolve para a raiz do projeto aberto no OpenCode.
+        // O servidor usa esse diretorio como projectPath.
+        "cwd": "."
+      }
+    }
+  }
+}
